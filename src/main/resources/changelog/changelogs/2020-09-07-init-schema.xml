@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet id="init-schema" author="M1keM1ke">
+
+        <createTable tableName="base_genre">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_base_genre"/>
+            </column>
+            <column name="genre_name" type="VARCHAR(255)"/>
+            <column name="genre_value" type="INT"/>
+        </createTable>
+
+        <createTable tableName="genre_top">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_genre_top"/>
+            </column>
+            <column name="genre" type="INT"/>
+            <column name="movie_num" type="INT"/>
+            <column name="page" type="INT"/>
+            <column name="user_bot_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="movie_list">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_movie_list"/>
+            </column>
+            <column name="tmdb_list_id" type="INT"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="language" type="VARCHAR(255)"/>
+            <column name="list_callback_data" type="VARCHAR(255)"/>
+            <column name="was_list_selected" type="BOOLEAN"/>
+            <column name="user_bot_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="param_movie">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_parameters"/>
+            </column>
+            <column name="genre_id" type="INT"/>
+            <column name="year" type="INT"/>
+            <column name="popularity" type="FLOAT"/>
+            <column name="actor" type="VARCHAR(255)"/>
+            <column name="actor_id" type="INT"/>
+            <column name="movie_num" type="INT"/>
+            <column name="page" type="INT"/>
+            <column name="user_bot_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="rating_top">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_rating_top"/>
+            </column>
+            <column name="movie_num" type="INT"/>
+            <column name="page" type="INT"/>
+            <column name="user_bot_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="user_bot">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_user_bot"/>
+            </column>
+            <column name="chat_id" type="BIGINT"/>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="user_name" type="VARCHAR(255)"/>
+            <column name="user_state" type="VARCHAR(255)"/>
+            <column name="session_id" type="VARCHAR(255)"/>
+            <column name="session_token" type="VARCHAR(255)"/>
+            <column name="current_movie_id" type="INT"/>
+            <column name="current_chosen_movie_list" type="VARCHAR(255)"/>
+        </createTable>
+
+        <createTable tableName="year_top">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_year_top"/>
+            </column>
+            <column name="year" type="INT"/>
+            <column name="movie_num" type="INT"/>
+            <column name="page" type="INT"/>
+            <column name="user_bot_id" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="user_bot_id" baseTableName="genre_top"
+                                 constraintName="FK_GENRE_TOP_ON_USER_BOT_ID" referencedColumnNames="id"
+                                 referencedTableName="user_bot"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_bot_id" baseTableName="movie_list"
+                                 constraintName="FK_MOVIE_LIST_ON_USER_ID" referencedColumnNames="id"
+                                 referencedTableName="user_bot"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_bot_id" baseTableName="param_movie"
+                                 constraintName="FK_PARAMETERS_ON_USER_BOT_ID" referencedColumnNames="id"
+                                 referencedTableName="user_bot"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_bot_id" baseTableName="rating_top"
+                                 constraintName="FK_RATING_TOP_ON_USER_BOT_ID" referencedColumnNames="id"
+                                 referencedTableName="user_bot"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_bot_id" baseTableName="year_top"
+                                 constraintName="FK_YEAR_TOP_ON_USER_BOT_ID" referencedColumnNames="id"
+                                 referencedTableName="user_bot"/>
+    </changeSet>
+
+</databaseChangeLog>

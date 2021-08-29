@@ -1,0 +1,94 @@
+#logging:
+#  level:
+#    root:
+
+server:
+  port: ${PORT:8081}
+# Database properties
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: ${SPRING_DATASOURCE_USERNAME:moviebot}
+    password: ${SPRING_DATASOURCE_PASSWORD:moviebot}
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/moviebot}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        show_sql: false
+  liquibase:
+    change-log: classpath:changelog/db.changelog-master.xml
+    enabled: true
+
+#Bot String constants and commands
+system:
+  name: ${BOT_NAME}
+  telegram-token: ${TELEGRAM_TOKEN}
+  tmdb-token: ${TMDB_TOKEN}
+
+bot-message:
+  greeting-msg: "привет"
+  top-movie-msg: "выбери интересующий тебя топ:"
+  param-movie-msg: "Просто выбери интересующие тебя параметры:"
+  genre-top-list: "боевик|приключения|мультфильм|комедия|криминал|документальный|драма|семейный|фэнтези|история|ужасы|музыка|детектив|мелодрама|фантастика|телевизионный фильм|триллер|военный|вестерн"
+
+buttons:
+  common-menu:
+    main-menu: "главное меню"
+    start: "/start"
+  genre:
+    action: "боевик"
+    action-id: 28
+    adventure: "приключения"
+    adventure-id: 12
+    animation: "мультфильм"
+    animation-id: 16
+    comedy: "комедия"
+    comedy-id: 35
+    crime: "криминал"
+    crime-id: 80
+    documentary: "документальный"
+    documentary-id: 99
+    drama: "драма"
+    drama-id: 18
+    family: "семейный"
+    family-id: 10751
+    fantasy: "фэнтези"
+    fantasy-id: 14
+    history: "история"
+    history-id: 36
+    horror: "ужасы"
+    horror-id: 27
+    music: "музыка"
+    music-id: 10402
+    mystery: "детектив"
+    mystery-id: 9648
+    romance: "мелодрама"
+    romance-id: 10749
+    science-fiction: "фантастика"
+    science-fiction-id: 878
+    thriller: "триллер"
+    thriller-id: 53
+    tv-movie: "телевизионный фильм"
+    tv-movie-id: 10770
+    war: "военный"
+    war-id: 10752
+    western: "вестерн"
+    western-id: 37
+  main-menu:
+    param-movie: "🎥 поиск фильма"
+    random-movie: "🎰 случайный фильм"
+    top-movie: "📈 топы фильмов"
+    list_movie: "📌 мои списки"
+  param-movie:
+    genre: "жанр"
+    rating: "рейтинг"
+    year: "год"
+  top-movie-menu:
+    by-genre: "по жанрам"
+    by-rating: "по рейтингу"
+    by-year: "по годам"
+  continue-button:
+    continue-inline: "Далее"

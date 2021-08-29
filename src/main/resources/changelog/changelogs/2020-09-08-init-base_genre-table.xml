@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet id="init-base_genre-table" author="M1keM1ke">
+
+        <insert tableName="base_genre">
+            <column name="id" value="35b08d4c-457b-42c1-b42c-a7238531dfa7"/>
+            <column name="genre_value" value="28"/>
+            <column name="genre_name" value="боевик"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="70d7b903-46f6-4e89-a436-df27decd5e20"/>
+            <column name="genre_value" value="12"/>
+            <column name="genre_name" value="приключения"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="9102209f-04ce-4038-8b91-526ac80d2105"/>
+            <column name="genre_value" value="16"/>
+            <column name="genre_name" value="мультфильм"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="5d99b494-26f2-4ca0-9e4e-fd2c28fc1b21"/>
+            <column name="genre_value" value="35"/>
+            <column name="genre_name" value="комедия"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="c5fac349-2474-45f5-8c69-8ad793034bd3"/>
+            <column name="genre_value" value="80"/>
+            <column name="genre_name" value="криминал"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="7d7eb168-c7ec-48b8-9d6f-b906143ef457"/>
+            <column name="genre_value" value="99"/>
+            <column name="genre_name" value="документальный"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="888df190-4d09-402b-b6e0-26958448d90d"/>
+            <column name="genre_value" value="18"/>
+            <column name="genre_name" value="драма"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="394305b8-418b-406d-8d5a-845eaf750bd1"/>
+            <column name="genre_value" value="10751"/>
+            <column name="genre_name" value="семейный"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="d6593e33-175e-4d71-8f28-46dd94a73e99"/>
+            <column name="genre_value" value="14"/>
+            <column name="genre_name" value="фэнтези"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="23aa8ab1-3665-48d4-a411-eaaffe326615"/>
+            <column name="genre_value" value="36"/>
+            <column name="genre_name" value="история"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="4fe03b98-c5ec-4515-bda9-579d5e1f2510"/>
+            <column name="genre_value" value="27"/>
+            <column name="genre_name" value="ужасы"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="d87ec4fd-57b1-4c07-b034-ef64270085b3"/>
+            <column name="genre_value" value="10402"/>
+            <column name="genre_name" value="музыка"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="4408d97a-b044-4ef9-ac30-351034060bcc"/>
+            <column name="genre_value" value="9648"/>
+            <column name="genre_name" value="детектив"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="50ba2907-7987-405b-b8c3-162ef1e8705f"/>
+            <column name="genre_value" value="10749"/>
+            <column name="genre_name" value="мелодрама"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="f2802cd3-2a5b-440d-a435-c7710e2f83b5"/>
+            <column name="genre_value" value="878"/>
+            <column name="genre_name" value="фантастика"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="0b92db4e-7981-46fe-ad95-2b12855394d8"/>
+            <column name="genre_value" value="10770"/>
+            <column name="genre_name" value="телевизионный фильм"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="eba897c5-8a40-408c-bbb7-577b4df0fdec"/>
+            <column name="genre_value" value="53"/>
+            <column name="genre_name" value="триллер"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="965012d5-3aa8-480a-81da-51752a162c8e"/>
+            <column name="genre_value" value="10752"/>
+            <column name="genre_name" value="военный"/>
+        </insert>
+        <insert tableName="base_genre">
+            <column name="id" value="77f1c9c3-8708-490e-b94b-02796bb08417"/>
+            <column name="genre_value" value="37"/>
+            <column name="genre_name" value="вестерн"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
